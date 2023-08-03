@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "dbc/*": ["src/*"],
+      "@/*": ["src/*"],
+      "@@/*": ["src/.umi/*"],
+    }
+  },
+  "extends": "./src/.umi/tsconfig.json",
+
+}
