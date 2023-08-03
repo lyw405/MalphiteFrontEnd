@@ -9,6 +9,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "simple-react-event-hub": "^1.0.4",
     "umi": "^4.0.73"
   },
   "devDependencies": {
