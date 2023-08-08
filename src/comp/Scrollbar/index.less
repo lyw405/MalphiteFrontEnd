@@ -1,0 +1,78 @@
+@scrollbar-width :6px;
+@scrollbar-height :20px;
+@scrollbar-background :range(255, 255, 255, 0.65);
+@scrollbar-radius :@scrollbar-width;
+
+.rcsc:global(.scrollarea) {
+    position: relative;
+    overflow: hidden;
+
+    :global {
+        .scrollarea-content {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            touch-action: none;
+
+            &:focus {
+                outline: 0;
+            }
+        }
+
+        .scrollbar-container {
+            &.horizontal {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: @scrollbar-width + 2px;
+
+                .scrollbar {
+                    width: @scrollbar-height;
+                    height: @scrollbar-width;
+                    margin-top: 1px;
+                    background: black;
+                    border-radius: @scrollbar-radius;
+                }
+            }
+
+            &.vertival {
+                top: 0;
+                right: 0;
+                width: @scrollbar-width + 2px;
+                height: 100%;
+
+                .scrollbar {
+                    width: @scrollbar-height;
+                    height: @scrollbar-width;
+                    margin-left: 1px;
+                    background: black;
+                    border-radius: @scrollbar-radius;
+                }
+            }
+
+            position: absolute;
+            z-index: 99;
+            background: @scrollbar-background;
+            opacity: 0;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -ms-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            transition: all 0.4s;
+
+            &:hover {
+                opacity: 1 !important;
+            }
+
+            &:active {
+                opacity: 1 !important;
+            }
+
+        }
+    }
+
+    &:hover :global(.scrollbar-container) {
+        opacity: 1;
+    }
+}
